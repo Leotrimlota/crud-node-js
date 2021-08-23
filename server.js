@@ -7,7 +7,7 @@ const exphbs = require('express-handlebars');
 const employeeController = require('./controllers/employeeController');
 
 var app = express();
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs',exphbs({extname: 'hbs',defaultLayout : 'mainLayout',layoutsDir : __dirname + '/views/layouts/'}));
